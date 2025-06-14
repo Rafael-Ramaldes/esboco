@@ -1,0 +1,28 @@
+<%- include('partials/header', { usuario }) %>
+<div class="container-fluid px-4 py-3">
+    <h1 class="text-white mb-4">Meus Favoritos</h1>
+    <% if (favoritos.length === 0) { %>
+        <div class="alert alert-info">
+            Você ainda não adicionou nenhum filme aos favoritos.
+        </div>
+    <% } else { %>
+        <div class="row">
+            <% favoritos.forEach(filme => { %>
+                <div class="col-md-3 col-lg-2 col-6 mb-4">
+                    <div class="card bg-transparent border-0">
+                        <img src="/images/<%= filme.capa %>" class="card-img-top filme-capa" alt="<%= filme.titulo %>">
+                        <div class="card-body p-0 mt-2">
+                            <h6 class="card-title text-white"><%= filme.titulo %></h6>
+                            <a href="/filmes/<%= filme.id %>" class="btn btn-sm btn-outline-info mt-1">Detalhes</a>
+                            <button class="btn btn-sm btn-warning mt-1 favorito-btn" 
+                                    data-filme-id="<%= filme.id %>">
+                                ★ Remover
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>
+<%- include('partials/footer') %>

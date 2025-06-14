@@ -1,0 +1,52 @@
+body {
+    background-color: #141414;
+    color: #fff;
+}
+
+.filme-capa {
+    transition: transform 0.3s;
+    border-radius: 5px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.filme-capa:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.destaque-row, .genero-row {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.destaque-row::-webkit-scrollbar, .genero-row::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+}
+
+.card {
+    transition: all 0.3s;
+}
+
+.card:hover {
+    z-index: 10;
+}
+
+.navbar {
+    background-color: #000 !important;
+}
+
+footer {
+    background-color: #000 !important;
+}
+
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
